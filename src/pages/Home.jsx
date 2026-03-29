@@ -47,10 +47,11 @@ export default function Home() {
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={HERO_IMG} alt="Cafe Interior" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-foreground/70" />
+          {/* Increased overlay opacity for better text contrast */}
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <p className="font-body text-xs uppercase tracking-[0.3em] text-background/70 mb-6 animate-fade-up">Est. 2025 — Ottawa</p>
+          <p className="font-body text-xs uppercase tracking-[0.3em] text-background/90 mb-6 animate-fade-up">Est. 2025 — Ottawa</p>
           <h1 className="font-heading text-4xl md:text-7xl font-semibold text-background leading-[1.1] animate-fade-up">
             Elevating Downtown's<br />Coffee Culture.
           </h1>
@@ -58,7 +59,8 @@ export default function Home() {
             <Button asChild className="rounded-full px-8 py-6 bg-primary text-primary-foreground hover:scale-105 transition-transform">
               <Link to="/menu">Explore Menu <ArrowRight size={16} className="ml-2" /></Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-background/50 text-background hover:bg-background/10">
+            {/* Improved button visibility with higher contrast border and text */}
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white text-black hover:bg-white/20">
               <Link to="/visit">Find Us</Link>
             </Button>
           </div>
@@ -66,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* Why Parliament - Quick Highlights */}
-      <section className="py-20 lg:py-28 px-6 bg-card/30">
+      <section className="py-16 lg:py-20 px-6 bg-card/30">
         <div className="max-w-7xl mx-auto">
           <SectionHeading eyebrow="Why Parliament" title="Crafted for Those Who Care" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -83,8 +85,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Editorial Story */}
-      <section className="py-24 lg:py-32 px-6">
+      {/* Editorial Story - Reduced top padding to tighten the gap */}
+      <section className="py-16 lg:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
@@ -93,7 +95,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-primary/5" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-44 h-44 bg-card border border-border rounded-full hidden md:flex items-center justify-center p-6 text-center shadow-xl">
-                <p className="font-heading text-primary italic text-sm italic">"Uncompromising standard of quality."</p>
+                <p className="font-heading text-primary italic text-sm">"Uncompromising standard of quality."</p>
               </div>
             </div>
             <div className="space-y-8">
@@ -103,7 +105,7 @@ export default function Home() {
               </h2>
               <div className="space-y-6 text-foreground/80 leading-relaxed text-lg">
                 <p>Welcome to Parliament Cafe, where heritage meets the art of modern coffee on historic Sparks Street.</p>
-                <p>Founders Plarent and Enkelejda Kokalari trained with the <span className="text-foreground font-semibold border-b border-accent/40">Canadian Barista Institute</span> to ensure every pour is a masterpiece.</p>
+                <p>Founders trained with the <span className="text-foreground font-semibold border-b border-accent/40">Canadian Barista Institute</span> to ensure every pour is a masterpiece.</p>
               </div>
               <Button asChild className="rounded-full px-8 py-6">
                 <Link to="/the-craft">Our Story</Link>
@@ -127,6 +129,26 @@ export default function Home() {
               ))}
             </CarouselContent>
           </Carousel>
+        </div>
+      </section>
+
+      
+
+
+
+      {/* CTA Section */}
+      <section className="bg-primary text-primary-foreground py-20 lg:py-24 px-6 mb-12 rounded-3xl mx-6 max-w-7xl lg:mx-auto overflow-hidden relative">
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-background/5 rounded-full" />
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <h2 className="font-heading text-3xl md:text-5xl font-semibold">Your Table Awaits on Sparks Street.</h2>
+          <p className="font-body text-base md:text-lg opacity-80 mt-4 max-w-lg mx-auto leading-relaxed">
+            Come experience the warmth, the craft, and the community. We can't wait to welcome you.
+          </p>
+          <Button asChild className="mt-8 bg-background text-primary hover:bg-background/90 rounded-full px-8 py-6 text-sm font-medium tracking-wide transition-all duration-300 hover:shadow-xl hover:scale-105">
+            <Link to="/visit">
+              Plan Your Visit <ArrowRight size={16} className="ml-2" />
+            </Link>
+          </Button>
         </div>
       </section>
     </div>
